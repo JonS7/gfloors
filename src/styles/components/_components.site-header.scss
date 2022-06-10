@@ -1,0 +1,40 @@
+/* Header */
+
+.Site-header {
+  flex-wrap: nowrap;
+  width: 100%;
+  z-index: 1;
+  margin-bottom: var(--s_col);
+
+  @media (min-width: $bp-med) {
+    position: absolute;
+  }
+
+  .contact {
+    justify-content: end;
+    padding: .5rem 1rem .5rem 0;
+    gap: 0 1rem;
+
+    a {
+      display: inline-block;
+      font-weight: bold;
+      --color-link: var(--color-base);
+
+      @include link-styles {
+        --color-link: var(--color-primary);
+      }
+    }
+  }
+
+  .brand {
+    flex: 1 1 auto;
+    margin-right: auto;
+    padding: .5rem 0 0 .5rem;
+
+    svg {
+      width: clamp(7rem, 15vw, 12rem);
+    }
+  }
+}
+
+

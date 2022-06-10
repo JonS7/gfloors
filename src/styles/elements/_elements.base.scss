@@ -1,0 +1,20 @@
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-size: var(--font_size);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background: var(--color-body);
+  color: var(--color-base);
+  font: $regular 100%/#{$line-height} $font;
+  margin: 0 ;
+}

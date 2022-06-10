@@ -1,0 +1,23 @@
+//Passages of text
+
+.typeset {
+  font-size: var(--ms-size_2);
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  ul {
+    list-style: none;
+    margin-bottom: $s_lh;
+  }
+
+  ul li::before {
+    content: "\25A0";
+    color: var(--color-primary); 
+    font-weight: bold;
+    display: inline-block;
+    width: 1em; 
+  }
+}
+

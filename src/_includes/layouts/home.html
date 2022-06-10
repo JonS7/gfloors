@@ -1,0 +1,120 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+<header class="S-hero has-bg g g-sm-1 ai-c">
+    <div class="S-hero_text typeset">
+        <h1 class="S-hero_title jumbo">{{ intro.main }}</h1>
+        <p class="S-hero_subtitle"><span class="uc font-small">{{ intro.subheading }}</span></p>
+        <p>{{ intro.summary }}</p>
+    </div>
+    <div class="S-hero_media">
+        <img class="" src="{{ intro.image }}" alt="{{ intro.imageAlt }}" />
+    </div>
+</header>
+<div class="S-services lc has-bg g g-1-1 g-med-1">
+    <div class="gi f jc-c ai-c">
+        <div class="c2a encircle"><a id="work-trigger" class="button -txt -large" href="#void">see our work</a></div>
+    </div>
+    <div class="gi typeset">
+        <p>We're a small, family-run business covering Surrey, Berkshire, Hampshire and West London. Skilled and experienced, we offer quality assurance on all floor fitting services for residential and commercial premises.</p>
+        <ul class="services">
+            <li>Design, product advice and quotations</li>
+            <li>Luxury vinyl tile supply & fitting</li>
+            <li>Underfloor preparation to all surfaces</li>
+            <li>Screed & damp proofing membrane</li>
+            <li>Ply installation from 6mm-18mm</li>
+            <li>Underfloor heating</li>
+            <li>Flooring ideas, advice & samples</li>
+            <li>Aftercare guarantee</li>
+        </ul>
+        <p>Advising on and fitting both straight and 45 degree tiles and planks, we specialise in border detail, moteefe and herringbone installation on all luxury vinyl tiles.</p>
+    </div>
+</div>
+<div id="gallery" class="lc">
+    <a id="closeGallery" class="button -outline" href="#void">BACK</a>
+    <h2 class="jumbo">Our work</h2>
+    <div class="image-grid">
+      {% for image in collections.gallery %}
+      <div class="cssbox" style="--trans-delay:  {{ loop.index }}">
+          <a href="#image{{loop.index}}" id="image{{loop.index}}"><img src="{{image.thumbpath}}" class="cssbox_thumb" alt="" loading="lazy" >
+              <span class="cssbox_full"><img src="{{image.w1000path}}" alt="" loading="lazy"></span></a>
+          <a class="cssbox_close" href="#void"></a>
+          {% if not loop.first %}
+          <a class="cssbox_prev" href="#image{{ loop.index - 1 }}">&laquo;</a>
+          {% endif %}
+          {% if not loop.last %}
+          <a class="cssbox_next" href="#image{{ loop.index + 1 }}">&raquo;</a>
+          {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+</div>
+<div class="S-testimonials lc g g-1-1-1 g-sm-1 has-bg">
+    {% for item in testimonials.items %}
+    {% if (loop.index <= 3) %} <blockquote class="quote typeset">
+        <p>{{ item.text }}</p>
+        {% if item.cite %}
+        <cite>{{ item.cite }}</cite>
+        {% endif %}
+        </blockquote>
+        {% endif %}
+        {% endfor %}
+</div>
+<div class="S-about lc g g-1-1 g-med-1">
+    <div class="gi">
+        <img src="./img/abstract-w1000.jpeg" alt="" loading="lazy" />
+    </div>
+    <div class="gi typeset">
+        <h2 class="section-title">Vinyl Tiles</h2>
+        <div class="g g-1-1-1 gg-sm thumb-grid">
+            <img src="./img/thumb-tile-thumb-1.jpeg" alt="" loading="lazy" />
+            <img src="./img/thumb-tile-thumb-2.jpeg" alt="" loading="lazy" />
+            <img src="./img/thumb-tile-thumb-3.jpeg" alt="" loading="lazy" />
+        </div>
+        <p>Luxury vinyl tiles are manufactured to create a textured surface, replicating the natural beauty of stone and wood as well as the elegance of marble and ceramics.</p>
+        <p>Unlike some natural products, vinyl flooring is quiet and warm underfoot, making it the perfect product for a lounge, bedroom or upstairs flat.</p>
+        <p>With high moisture-resistance, luxury vinyl tiles will not warp out of shape, making them a great choice in wet areas like kitchens and bathrooms.</p>
+    </div>
+</div>
+<div class="S-logos lc g g-1-1 gg-none g-med-1 has-bg ">
+    <div class="gi has-bg typeset">
+        <p class="g gg-sm thumb-grid">
+            <img src="./img/karndean-logo-w300.png" alt="" loading="lazy" />
+            <img src="./img/amtico-logo-w300.png" alt="" loading="lazy" />
+            <img src="./img/polyflor-logo-w300.png" alt="" loading="lazy" />
+            <img src="./img/sierra-logo-w300.png" alt="" loading="lazy" />
+        </p>
+        <p>We are registered and qualified Karndean and Amtico fitters and can supply samples on a wide range of products to suit all budgets.</p>
+    </div>
+</div>
+<div class="S-testimonials lc g g-1-1-1 g-sm-1">
+    {% for item in testimonials.items %}
+    {% if ( loop.index >= 4) %}
+    {% if ( loop.index <= 6) %} <blockquote class="quote typeset">
+        <p>{{ item.text }}</p>
+        {% if item.cite %}
+        <cite>{{ item.cite }}</cite>
+        {% endif %}
+        </blockquote>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+</div>
+<div class="Site-footer has-bg f ai-fe">
+    <div class="lc g g-1-1 g-med-1 gg-none">
+        <div class="gi has-bg typeset">
+            <h2 class="section-title">Contact us</h2>
+            <p>G-Floors offer a free advice and quotation service with no pressure or obligation. Get in touch by phone or email and speak with an experienced flooring technician.</p>
+            {% set c2aContent = c2a %}
+            {% include "partials/c2a.html" %}
+        </div>
+    </div>
+    <div class="contact lc has-bg f f-g f-sm-1">
+        <a class="brand" href="{{ site.url }}">{% include "partials/gfloors-logo-light.svg" %}</a>
+        {% include "partials/address.html" %}
+        <p>{{ site.hours | safe }}</p>
+        <p>Tel: <a href="tel:{{ site.tel }}">{{ site.tel }}</a></p>
+        <p>Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+        <a class="credit" href="https://satellite7.com">Site by S7</a>
+    </div>
+</div>
+{% endblock %}

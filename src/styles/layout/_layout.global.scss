@@ -1,0 +1,16 @@
+/* ------------------------------------*\
+    $LAYOUT
+\*------------------------------------ */
+
+
+.lc {
+  clear: both;
+  padding: var(--s_row) var(--gutter);
+  position: relative;
+  width: 100%;
+
+  &:not(.has-bg) + &:not(.has-bg) {
+    padding-top: 0;
+  }
+
+}

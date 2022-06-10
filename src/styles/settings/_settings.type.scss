@@ -1,0 +1,57 @@
+// fonts
+$font-sans: "Jost", "Futura", sans-serif;
+$font-serif: "Majesti_Banner", "Constantia", "Georgia", "Times New Roman", serif;
+$font-mono: monospace !default;
+$font-numbers: $font-sans !default;
+$paragraph-indent: false;
+$paragraph-justify: false;
+$line-height: 1.5;
+$thin : 100;
+$light : 300;
+$regular : 400;
+$medium : 500;
+$semi-bold : 600;
+$bold : 700;
+$heavy : 800;
+$black : 900;
+$font : $font-sans;
+$font-heading : $font-serif;
+$font-small: 75%;
+
+
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: $regular;
+  src: url('../fonts/jost-v13-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/jost-v13-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-display: swap;
+}
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: $bold;
+  src: url('../fonts/jost-v13-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/jost-v13-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-display: swap;
+}
+@font-face {
+  font-family: "Majesti_Banner";
+  font-style: normal;
+  font-weight: $bold;
+  src: url('../fonts/majesti-banner-bold-webfont.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/majesti-banner-bold-webfont.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-display: swap;
+}
+@font-face {
+  font-family: "Majesti_Banner";
+  font-style: italic;
+  font-weight: $regular;
+  src: url('../fonts/majesti-banner-bookitalic-webfont.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/majesti-banner-bookitalic-webfont.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-display: swap;
+}
+
+
+$base-font-size : 16px;
+

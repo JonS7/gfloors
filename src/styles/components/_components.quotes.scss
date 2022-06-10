@@ -1,0 +1,27 @@
+.quote {
+  margin: 0 auto;
+  quotes: "“""”""‘""’";
+  position: relative;
+  padding: 0;
+  font-size: 1.2rem;
+  font-family: "Majesti Banner";
+  font-style: italic;
+  font-feature-settings: "dlig";
+
+  &::before {
+    float: left;
+    content: "\201C";
+    font-size: 7em;
+    line-height: .8;
+    height: 1rem;
+    transform: translate(-.1em, -.1em);
+
+    @media (min-width: $bp-xxl) {
+      position: absolute;
+      left: -.5em;
+      top: -.1em;
+      transform: none;
+
+    }
+  }
+}

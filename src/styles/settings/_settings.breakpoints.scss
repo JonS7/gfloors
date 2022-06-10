@@ -1,0 +1,60 @@
+ /* ____________________________________*\
+    $BREAKPOINTS
+\*____________________________________ */
+
+//Breakpoints
+$bp_xxxxs : 20rem; // 320
+$bp_xxxs : 22.5rem; // 360
+$bp_xxs : 30rem; // 480
+$bp_xs : 37.5rem; // 600
+$bp_small : 48rem; // 768
+$bp_small_med : 55rem; // 880
+$bp_med : 64rem; // 1024
+$bp_med_large : 70rem; // 1120
+$bp_large : 80rem; // 1280
+$bp_xl : 85.375rem; // 1366
+$bp_xxl : 97rem; // 1552
+$bp_xxxl : 120rem; // 1920
+$bp_xxxxl : 140rem; // 2240
+
+//Layout
+$max_width : 1900px;
+$max_text_width : 43rem;
+$grid_mode : $bp_small;
+$grid_mode_2 : $bp_med;
+$txt_contain_mode : $bp_small;
+$menu_mode : $bp_small_med;
+$menu_mode_2 : $bp_xxxl;
+$fixed_menu_mode : $bp_med;
+
+$page_header_mode : $bp_large;
+$l_2col_mode : $menu_mode;
+$tab_mode : $bp_med;
+$overlay_mode : $bp_xs;
+$quote_mode : $bp_xs;
+$logo_mode : 1024px;
+$grid_overlay_mode : $bp_small;
+$hero_layout_mode : $bp_xl;
+$fixed_header_mode : $hero_layout_mode;
+
+//Max
+$l_2col_mode_max : calc(#{$l_2col_mode} - .0625rem);
+$grid_mode_max : calc(#{$grid_mode} - .0625rem);
+$grid_mode_2_max : $grid_mode_2 - .0625rem;
+$menu_mode_max : $menu_mode - .0625rem;
+$tab_mode_max : $tab_mode - .0625rem;
+$bp_xxxxs_max : $bp_xxxxs - .0625rem;
+$bp_xxxs_max : $bp_xxxs - .0625rem;
+$bp_xxs_max : $bp_xxs - .0625rem;
+$bp_xs_max : $bp_xs - .0625rem;
+$bp_small_max : $bp_small - .0625rem;
+$bp_small_med_max : $bp_small_med - .0625rem;
+$bp_med_max : $bp_med - .0625rem;
+$bp_med_large_max : $bp_med_large - .0625rem;
+$bp_large_max : $bp_large - .0625rem;
+$bp_xl_max : $bp_xl - .0625rem;
+$bp_xxl_max : $bp_xxl - .0625rem;
+$bp_xxxl_max : $bp_xxxl - .0625rem;
+$grid_overlay_mode_max: calc(#{$grid_overlay_mode} - .0625rem);
+$hero_layout_mode_max : calc(#{$hero_layout_mode} - .0625rem);
+

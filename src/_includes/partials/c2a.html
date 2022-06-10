@@ -1,0 +1,11 @@
+{% set c2aPrefix = cta %}
+
+{% if c2aContent %} 
+  {% set c2aPrefix = c2aContent %}
+{% endif %}
+
+
+<div class="f gg-sm">
+  <a class="button" href="{{ c2aPrefix.buttonUrl }}">{{ c2aPrefix.buttonText }}</a>
+  <a class="button" href="{{ c2aPrefix.button2Url }}">{{ c2aPrefix.button2Text }}</a>
+</div>

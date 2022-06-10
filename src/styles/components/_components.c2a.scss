@@ -1,0 +1,35 @@
+//Passages of text
+
+.encircle {
+  color: var(--color-body);
+  background: var(--color-base);
+  display: inline-flex;
+  aspect-ratio: auto 1 / 1;
+  align-items: center;
+  padding: max(2rem, calc(var(--gap) / 2));
+  border-radius: 50%;
+  position: relative;
+
+  a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200vw;
+    height: 200vw;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    background: var(--color-base);
+    border-radius: 50%;
+    z-index: 99;
+    transition: none;
+  }
+
+  a.is-active {
+      &::before {
+        transition: transform .667s ease-out;
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+  }
+}

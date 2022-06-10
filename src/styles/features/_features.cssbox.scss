@@ -1,0 +1,153 @@
+/* The work below, CSSBox, is released under the Creative Commons
+   Attribution-ShareAlike 4.0 license and is available on
+   https://github.com/TheLastProject/CSSBox. You are not required to add
+   additional credit to your website, just leave the above text in this file */
+
+#gallery {
+  content-visibility: hidden;
+  position: fixed;
+  z-index: -999;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  background: var(--color-base);
+  color: var(--color-body);
+  transition: opacity .3s linear 0s, z-index 0s linear 1s;
+
+  &.is-active {
+    content-visibility: visible;
+    opacity: 1;
+    z-index: 999;
+    transition: opacity .3s linear .3s;
+  }
+}
+
+#closeGallery {
+  margin-bottom: calc(var(--gap) / 2);
+  @media (min-width: $bp-small) {
+    position: absolute;
+    top: 2vmax;
+    left: 2vmax;
+   }
+}
+
+
+img.cssbox_thumb {
+  display: block;
+  transform: scale(0);
+  opacity: 0;
+  transition: .3s linear calc(300ms + calc(var(--trans-delay) * 20ms)); // not working with content-visibility
+
+  .is-active & {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &:hover {
+    opacity: .5;
+    transition-delay: 0s;
+  }
+}
+
+span.cssbox_full {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.8);
+  background-color: var(--color-base);
+  opacity: 0;
+  pointer-events: none;
+  cursor: default;
+  transition: opacity 0.3s linear;
+  
+}
+
+span.cssbox_full img {
+  display: block;
+  position: fixed;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  max-height: 90%;
+  max-width: 90%;
+  top: 50%;
+  left: 50%;
+  //margin-right: -50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: opacity 0.3s linear;
+}
+
+a.cssbox_close,
+a.cssbox_prev,
+a.cssbox_next {
+  z-index: 999;
+  position: fixed;
+  text-decoration: none;
+  visibility: hidden;
+  color: var(--color-body);
+  font-size: clamp(2rem, 3vw, 5rem);
+  font-family: $font-serif;
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+a.cssbox_close {
+  top: 2%;
+  right: 2%;
+}
+
+a.cssbox_close::after {
+  content: '\00d7';
+  border: 1px solid;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  display: block;
+  text-align: center;
+  border-radius: 50%;
+  font-size: clamp(1rem, 2vw, 3rem);
+
+}
+
+a.cssbox_prev,
+a.cssbox_next {
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
+a.cssbox_prev {
+  left: 5%;
+}
+
+a.cssbox_next {
+  right: 5%;
+}
+
+a:target ~ a.cssbox_close,
+a:target ~ a.cssbox_prev,
+a:target ~ a.cssbox_next {
+  visibility: visible;
+}
+
+a:target > img.cssbox_thumb + span.cssbox_full {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: initial;
+  transition: none;
+
+
+  img {
+    opacity: 1;
+  }
+}
+/* This is the end of CSSBox */

@@ -1,0 +1,13 @@
+{% include "partials/htmlhead.html" %}
+
+{% include "partials/siteheader.html" %}
+
+<main class="Site-main">
+{% block content %}
+
+  {{ content | safe }}
+
+{% endblock %}
+</main>
+
+{% include "partials/htmlfoot.html" %}

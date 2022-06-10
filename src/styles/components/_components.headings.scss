@@ -1,0 +1,41 @@
+/* Header */
+
+
+.jumbo {
+  font-size: 15vw;
+  text-transform: lowercase;
+  margin-bottom: calc(var(--gap) / 2);
+
+  @media (min-width: $grid-mode) {
+    font-size: 10vw
+  }
+
+  @media (min-width: $bp_med_large) {
+    font-size: 7.5vw
+  } 
+
+  @media (min-width: $max_width) {
+    font-size: var(--h1_size);
+  }
+}
+
+
+.S-hero_title {
+  max-width: 6em;
+  margin: 0;
+}
+
+
+.S-hero_subtitle {
+  opacity: .75;
+  margin: 1em 0;
+}
+
+.section-title {
+  text-transform: lowercase;
+  margin-bottom: .5em;
+
+  .S-about & {
+    margin-bottom: 1em;
+  }
+}

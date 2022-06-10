@@ -1,0 +1,90 @@
+/* I strongly recommend using preprocessors for global (static) variables
+https://www.smashingmagazine.com/2018/05/css-custom-properties-strategy-guide/
+Separate logic from design;
+If a CSS property changes, consider using a custom property;
+Change the value of custom properties, not which custom property is used;
+Global variables are usually static.
+
+I really love the advice in this article, especially the "logic fold" concept,
+putting the media-query variables at the top and then consuming those variables in the component styling.
+*/
+
+// WILL value change? USE CSS Vars
+
+// I can imagine most sites that use CSS variables well, will not have any
+// media queries other than for changing values in CSS variables.
+
+// In short if a media query swaps variables, there is a good chance
+// you're doing it wrong. Change the values of variables not which
+// variables are used. This should also result in more samentic naming
+// conventions.
+
+// Colors
+// =================================================
+
+:root {
+  --scale: 1.2;
+  --ms-size_-3: calc(var(--ms-size_-2) / var(--scale));
+  --ms-size_-2: calc(var(--ms-size_-1) / var(--scale));
+  --ms-size_-1: calc(var(--ms-size_1) / var(--scale));
+  --ms-size_1: 1rem;
+  --ms-size_2: calc(var(--scale) * var(--ms-size_1));
+  --ms-size_3: calc(var(--scale) * var(--ms-size_2));
+  --ms-size_4: calc(var(--scale) * var(--ms-size_3));
+  --ms-size_5: calc(var(--scale) * var(--ms-size_4));
+  --ms-size_6: calc(var(--scale) * var(--ms-size_5));
+  --ms-size_7: calc(var(--scale) * var(--ms-size_6));
+  --ms-size_8: calc(var(--scale) * var(--ms-size_7));
+  --ms-size_9: calc(var(--scale) * var(--ms-size_8));
+  --ms-size_10: calc(var(--scale) * var(--ms-size_9));
+  --s_row: var(--ms-size_6);
+  --s_col: var(--ms-size_4);
+  --s_el: var(--ms-size_1);
+  --gap: var(--ms-size_2);
+  --gutter: var(--gap);
+  --font_size: 100%;
+  --h1_size: var(--ms-size_9);
+  --h2_size: var(--ms-size_6);
+  --h3_size: var(--ms-size_4);
+  --h4_size: var(--ms-size_3);
+  --h5_size: var(--ms-size_2);
+  --h6_size: var(--ms-size_1);
+
+
+  @media (min-width: $bp_xxs) {
+    --gap: var(--s_col);
+  }
+
+
+  @media (min-width: $bp_xs) {
+    --scale: 1.333;
+    --s_col: var(--ms-size_5);
+  }
+
+  @media (min-width: $bp_small) {
+    --s_row: var(--ms-size_7);
+    --s_col: var(--ms-size_6);
+  }
+
+  @media (min-width: $bp_med_large) {
+    --gutter: var(--s_row);
+  } 
+
+  @media (min-width: $bp_large) {
+    --s_row: var(--ms-size_8);
+    --s_col: var(--ms-size_7);
+  }
+
+  @media (min-width: $bp_xxl) {
+    --s_col: var(--ms-size_8);
+  }
+
+  @media (min-width: $bp_xxl) and (min-height: 80rem) {
+    --s_row: var(--ms-size_9);
+  }
+
+  @media (min-width: $max_width) {
+    --gutter: calc(50vw - calc(#{$max_width} / 2) + var(--s_row));
+    --s_row: var(--ms-size_9);
+  }
+}

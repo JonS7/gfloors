@@ -1,0 +1,24 @@
+<header role="banner" id="Site-header" class="Site-header f jc-sb ai-c">
+
+  <a class="brand" href="{{ site.url }}">{% include "partials/brand.svg" %}</a>
+
+  <div class="contact f jc-fe">
+    <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+    <a href="tel:{{ site.tel }}">{{ site.tel }}</a>
+  </div>
+
+  {% if site.has_nav === true %}
+
+    <ul class="Site-nav">
+      {% for item in nav.items %}
+      <li>
+        <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}
+          >{{ item.text }}</a
+        >
+      </li>
+      {% endfor %}
+    </ul>
+
+  {% endif %}
+
+</header>

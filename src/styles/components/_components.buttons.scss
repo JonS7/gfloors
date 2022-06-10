@@ -1,0 +1,159 @@
+/* ------------------------------------*\
+    $BUTTONS
+\*------------------------------------ */
+$btn-bg:    var(--btn-bg) !default;
+$btn-color:         var(--btn-color) !default;
+$btn-bg-alt:    var(--btn-bg-alt) !default;
+$btn-color-alt:         var(--btn-color-alt) !default;
+
+// borders
+$btn-border-width:      0 !default;
+$btn-border-style:      solid !default;
+$btn-border-color:      $btn-bg !default;
+$btn-border-color-respond:  $btn-border-color !default;
+$btn-radius:            0 !default;
+
+$enable-btn--alt:    false !default;
+$enable-btn--small:   false !default;
+$enable-btn--large:   true !default;
+$enable-btn--full:    false !default;
+$enable-btn--pill:    false !default;
+$enable-btn--angle:    false !default;
+$enable-btn--squash:    false !default;
+$enable-btn--text:    true !default;
+$enable-btn--uppercase:    false !default;
+$enable-btn--outline:    true !default;
+$enable-btn--letterspacing:    false !default;
+$enable-btn--has_icon:    false !default;
+
+.button a {
+  color: currentColor;
+}
+
+.button {
+  background: $btn-bg;
+  color: $btn-color;
+  display: inline-block;
+  font-weight: $bold;
+  outline: none;
+  transition: $trans-fast;
+  vertical-align: middle;
+  text-decoration: none;
+  text-align: center;
+  padding: .667em;
+
+  @if $enable-btn--uppercase == true {
+    text-transform: uppercase;
+  }
+
+  @if $enable-btn--letterspacing == true {
+    letter-spacing: .1em;
+  }
+
+  @if $btn-border-width != 0 {
+    border: $btn-border-width $btn-border-style var(--btn-bg);
+    padding: .667em 1em;
+  }
+
+  @if $btn-radius != 0 {
+    border-radius: $btn-radius;
+  }
+
+  @if $enable-btn--outline == true {
+    &.-outline {
+      --btn-bg: transparent;
+      --btn-color: currentColor;
+      outline: 1px solid;
+    }
+  }
+
+  @if $enable-btn--has_icon == true {
+    &.-has-icon {
+      display: grid;
+      grid-gap: 1em;
+      grid-template-columns: auto auto;
+    }
+  }
+
+
+  @if $enable-btn--small == true {
+    &.-small {
+      font-size: .85714rem;
+    }
+  }
+
+  @if $enable-btn--large == true {
+    &.-large {
+      font-size: var(--ms-size_4);
+    }
+  }
+
+  @if $enable-btn--full == true {
+    &.-w100 {
+      width: 100%;
+    }
+  }
+
+  @if $enable-btn--pill == true {
+    &.-round {
+      border-radius: 100%;
+    }
+  }
+
+  @if $enable-btn--text == true {
+    &.-txt {
+      background: none;
+      color: currentColor;
+      padding: 0 0 0 1em;
+      font-family: $font-serif;
+      font-style: italic;
+      font-weight: $regular;
+      border: 0;
+      border-bottom: 1px solid;
+      font-feature-settings: "dlig";
+
+      &::after {
+        content: '\00BB';
+        padding-left: .5em;
+      }
+    }
+  }
+
+  @if $enable-btn--squash == true {
+    &.-squash {
+      padding: .2em 1em .1em 1em;
+    }
+  }
+
+  @if $enable-btn--alt == true {
+    &.-alt {
+      --btn-bg: #{$btn-bg-alt};
+      --btn-color: #{$btn-color-alt}:
+    }
+  }
+
+  @include link-styles {
+    --btn-bg: #{$btn-bg-alt};
+    --btn-color: #{$btn-color-alt};
+
+    @if $enable-btn--alt == true {
+      &.-alt {
+        --btn-bg: #{$btn-bg};
+        --btn-color: #{$btn-color};
+      }
+    }
+
+    @if $enable-btn--text == true {
+      &.-txt {
+        color: var(--color-base-alt);
+      }
+    }
+
+    @if $enable-btn--outline == true {
+      &.-outline {
+        --btn-bg: var(--color-primary);
+        //--btn-color: var(--color-base);
+      }
+    }
+  }
+}

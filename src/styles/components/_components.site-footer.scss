@@ -1,0 +1,31 @@
+/* Footer */
+
+.Site-footer {
+  background: url(../img/woodkitchen-w1500.jpeg) 50% 50% no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+
+  .contact {
+    background: rgba(0,0,0,.5);
+    padding-top: max(2rem, calc(var(--s_col) / 2));
+    padding-bottom: max(2rem, calc(var(--s_col) / 2));
+    color: var(--color-body);
+
+    .brand svg {
+      width: 10rem;
+    }
+
+    a {
+      color: currentColor;
+    }
+  }
+
+  .credit {
+    text-transform: uppercase;
+    font-size: 75%;
+    margin-left: auto;
+    align-self: flex-end;
+    text-align: right;
+  }
+}
