@@ -13,11 +13,13 @@
   }
 
   ul li::before {
-    content: "\25A0";
-    color: var(--color-primary); 
-    font-weight: bold;
+    content: '';
+    width: .5em;
+    height: .5em;
+    background: var(--color-primary); 
     display: inline-block;
-    width: 1em; 
+    margin-right: .5em;
+    transform: translateY(-.1em);
   }
 }
 
