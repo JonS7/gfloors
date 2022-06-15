@@ -60,4 +60,12 @@
   .gi:only-child {
     grid-column: -2/-1;
   }
+
+  .thumb-grid {
+    @media (max-width: $bp_xxs_max) {
+      grid-template-columns: 1fr 1fr;
+    }
+    
+  }
+
 }
