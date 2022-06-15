@@ -29,6 +29,13 @@
   }
 }
 
+.g-lg-1 {
+  @media (max-width: $bp_med_max) {
+    grid-template-columns: 1fr;
+    grid-gap: var(--s_row);
+  }
+}
+
 .g img {
   display: block;
 }
@@ -45,25 +52,11 @@
 }
 
 .image-grid {
-  columns: 2;
-  //column-width: clamp(8rem, 5vw, 15rem);
-  column-gap: clamp(1rem, 1vw, 2rem);
-
-  @media (min-width: $bp-xxs) {
-    columns: 3
-  }
-
-  @media (min-width: $bp-small) {
-    columns: 4
-  }
-
-  @media (min-width: $bp-med) {
-    columns: auto clamp(8rem, 5vw, 15rem);
-  }
-
-  .cssbox_thumb {
-    display: block;
-    margin-bottom: clamp(1rem, 1vw, 2rem);
+  width: 100%;
+  
+  @media (min-width: 400px) {
+    columns: auto clamp(12rem, 15vw, 400px);
+    column-gap: clamp(1rem, 1vw, 2rem);
   }
 }
 

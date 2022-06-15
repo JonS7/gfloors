@@ -13,7 +13,7 @@
   .contact {
     justify-content: end;
     padding: .5rem 1rem .5rem 0;
-    gap: 0 1rem;
+    gap: .25rem 1rem;
 
     a {
       display: inline-block;
@@ -32,7 +32,7 @@
     padding: .5rem 1rem 0 .5rem;
 
     svg {
-      width: clamp(7rem, 15vw, 12rem);
+      width: clamp(9rem, 15vw, 12rem);
     }
   }
 }

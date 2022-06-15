@@ -7,7 +7,7 @@
         <p>{{ intro.summary }}</p>
     </div>
     <div class="S-hero_media">
-        <img class="" src="{{ intro.image }}" alt="{{ intro.imageAlt }}" />
+      {% image "./src/images/openplan.jpg", "", "(min-width: 30em) 50vw, 100vw" %}
     </div>
 </header>
 <div class="S-services lc has-bg g g-1-1 g-med-1">
@@ -29,14 +29,20 @@
         <p>Advising on and fitting both straight and 45 degree tiles and planks, we specialise in border detail, moteefe and herringbone installation on all luxury vinyl tiles.</p>
     </div>
 </div>
+
+
 <div id="gallery" class="lc">
     <a id="closeGallery" class="button -outline" href="#void">BACK</a>
     <h2 class="jumbo">Our work</h2>
     <div class="image-grid">
       {% for image in collections.gallery %}
+
+      
       <div class="cssbox" style="--trans-delay:  {{ loop.index }}">
-          <a href="#image{{loop.index}}" id="image{{loop.index}}"><img src="{{image.thumbpath}}" class="cssbox_thumb" alt="" loading="lazy" >
-              <span class="cssbox_full"><img src="{{image.w1000path}}" alt="" loading="lazy"></span></a>
+
+          <a href="#image{{loop.index}}" id="image{{loop.index}}">
+            {% galleryImage image.thumbpath, "" %}
+              <span class="cssbox_full">{% galleryImage image.thumbpath, "", "full" %}</span></a>
           <a class="cssbox_close" href="#void"></a>
           {% if not loop.first %}
           <a class="cssbox_prev" href="#image{{ loop.index - 1 }}">&laquo;</a>
@@ -61,14 +67,14 @@
 </div>
 <div class="S-about lc g g-1-1 g-med-1">
     <div class="gi">
-        <img src="./img/abstract-w1000.jpeg" alt="" loading="lazy" />
+        {% image "./src/images/abstract.jpg", "vinyl tile 1", "(min-width: 30em) 50vw, 100vw" %}
     </div>
     <div class="gi typeset">
         <h2 class="section-title">Vinyl Tiles</h2>
         <div class="g g-1-1-1 gg-sm thumb-grid">
-            <img src="./img/thumb-tile-thumb-1.jpeg" alt="" loading="lazy" />
-            <img src="./img/thumb-tile-thumb-2.jpeg" alt="" loading="lazy" />
-            <img src="./img/thumb-tile-thumb-3.jpeg" alt="" loading="lazy" />
+            {% image "./src/images/tile-thumb-1.jpg", "vinyl tile 2", "" %}
+            {% image "./src/images/tile-thumb-2.jpg", "vinyl tile 3", "" %}
+            {% image "./src/images/tile-thumb-3.jpg", "vinyl tile 4", "" %}
         </div>
         <p>Luxury vinyl tiles are manufactured to create a textured surface, replicating the natural beauty of stone and wood as well as the elegance of marble and ceramics.</p>
         <p>Unlike some natural products, vinyl flooring is quiet and warm underfoot, making it the perfect product for a lounge, bedroom or upstairs flat.</p>
@@ -78,15 +84,15 @@
 <div class="S-logos lc g g-1-1 gg-none g-med-1 has-bg ">
     <div class="gi has-bg typeset">
         <p class="g gg-sm thumb-grid">
-            <img src="./img/karndean-logo-w300.png" alt="" loading="lazy" />
-            <img src="./img/amtico-logo-w300.png" alt="" loading="lazy" />
-            <img src="./img/polyflor-logo-w300.png" alt="" loading="lazy" />
-            <img src="./img/sierra-logo-w300.png" alt="" loading="lazy" />
+            {% image "./src/images/karndean-logo.png", "karndean logo", "" %}
+            {% image "./src/images/amtico-logo.png", "amtico logo", "" %}
+            {% image "./src/images/polyflor-logo.png", "polyflor logo", "" %}
+            {% image "./src/images/sierra-logo.png", "sierra logo", "" %}
         </p>
         <p>We are registered and qualified Karndean and Amtico fitters and can supply samples on a wide range of products to suit all budgets.</p>
     </div>
 </div>
-<div class="S-testimonials lc g g-1-1-1 g-sm-1">
+<div class="S-testimonials lc g g-1-1-1 g-lg-1">
     {% for item in testimonials.items %}
     {% if ( loop.index >= 4) %}
     {% if ( loop.index <= 6) %} <blockquote class="quote typeset">

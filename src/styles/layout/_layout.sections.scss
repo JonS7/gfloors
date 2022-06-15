@@ -1,62 +1,63 @@
 .S-services {
-    position: relative;
-    padding-top: var(--s_row);
+  position: relative;
+  padding-top: var(--s_row);
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 50%;
-        height: 100%;
-        background: url(../img/abstract2-w1500.jpeg) 0 50% no-repeat;
-        background-size: auto 100%;
-        background-attachment: fixed;
-        z-index: -1;
-
-        @media (max-width: $grid_mode_2_max) {
-            width: 100%;
-        }
-    }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-attachment: fixed;
+    z-index: -1;
 
     @media (max-width: $grid_mode_2_max) {
-        .gi.typeset {
-            order: -1;
-            background: var(--color-body);
-            padding: max(2rem, calc(var(--s_col) / 2));
-        }
+      width: 100%;
     }
+  }
 
-    @media (min-width: $bp-xxs) and (max-width: $grid_mode_2_max),
-    (min-width: $bp-large) {
-        ul.services {
-            margin-left: var(--s_col);
-        }
+  @media (max-width: $grid_mode_2_max) {
+    .gi.typeset {
+      order: -1;
+      background: var(--color-body);
+      padding: max(2rem, calc(var(--s_col) / 2));
     }
+  }
+
+  @media (min-width: $bp-xxs) and (max-width: $grid_mode_2_max),
+  (min-width: $bp-large) {
+    ul.services {
+      margin-left: var(--s_col);
+    }
+  }
 }
+
 
 
 .S-testimonials {
-    background: var(--color-base);
-    color: var(--color-body);
+  background: var(--color-base);
+  color: var(--color-body);
 
-    .quote {
-        opacity: .7
-    }
+  .quote {
+    opacity: .7
+  }
 }
 
 .S-about {
-    .thumb-grid {
-        margin-bottom: max(2rem, calc(var(--gap) / 2));
-    }
+  .thumb-grid {
+    margin-bottom: max(2rem, calc(var(--gap) / 2));
+  }
 }
 
 .S-logos {
-    background: url(../img/parquet2-w1500.jpeg) 50% 50% no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+  background-size: cover;
+  background-attachment: fixed;
 
-    .gi:only-child {
-        grid-column: -2/-1;
-    }
+  .gi:only-child {
+    grid-column: -2/-1;
+  }
 }
