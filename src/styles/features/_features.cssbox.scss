@@ -83,6 +83,7 @@ body.slide-is-active {
 
 span.cssbox_full {
   //display: none;
+  content-visibility: hidden;
   z-index: 999;
   position: fixed;
   top: 0;
@@ -94,6 +95,10 @@ span.cssbox_full {
   pointer-events: none;
   cursor: default;
   transition: opacity 0.3s linear;
+
+  body.slide-is-active #gallery.is-active & {
+    content-visibility: visible;
+  }
 }
 
 span.cssbox_full img {

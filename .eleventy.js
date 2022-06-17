@@ -52,7 +52,7 @@ async function galleryShortcode(src, alt, size) {
 }
 
 
-async function imageShortcode(src, alt, sizes) {
+async function imageShortcode(src, alt, sizes, loading="lazy") {
   let metadata = await Image(src, {
     widths: [THUMB,LARGE,FULL, null],
     formats: ['webp', 'jpeg'],
@@ -62,9 +62,11 @@ async function imageShortcode(src, alt, sizes) {
   let imageAttributes = {
     alt,
     sizes,
-    loading: "lazy",
+    loading,
     decoding: "async",
   };
+
+
 
   // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
   return Image.generateHTML(metadata, imageAttributes);
