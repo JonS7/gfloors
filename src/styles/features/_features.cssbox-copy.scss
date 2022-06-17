@@ -3,37 +3,31 @@
    https://github.com/TheLastProject/CSSBox. You are not required to add
    additional credit to your website, just leave the above text in this file */
 
-.Site, #gallery {
-  transition: transform .3s ease-in-out;
-}
-
-body.slide-is-active {
-  //overflow-x: hidden;
-
-  .Site, #gallery {
-    transform: translate(-100vw,0);
-  }
+body.is-overflow-hidden {
+  overflow-x: hidden;
 }
 
 #gallery {
   flex-direction: column;
+  content-visibility: hidden;
   position: fixed;
   z-index: -999;
-  top: 200vh;
-  left: 100vw;
-  width: 100vw;
-  bottom: -200vh;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   overflow: hidden;
   background: var(--color-base);
   color: var(--color-body);
-  //transition: opacity .3s linear 0s, z-index 0s linear 1s;
+  transition: opacity .3s linear 0s, z-index 0s linear 1s;
 
   &.is-active {
     display: flex;
+    content-visibility: visible;
+    opacity: 1;
     z-index: 999;
-    top: 0;
-    bottom: 0;
-    //transition: opacity .3s linear .3s;
+    transition: opacity .3s linear .3s;
   }
 }
 

@@ -48,7 +48,7 @@ async function galleryShortcode(src, alt, size) {
   if(size == "full") {
      sizeSrc = metadata["jpeg"][1];
   }
-  return `<img src="${sizeSrc.url}" width="${sizeSrc.width}" height="${sizeSrc.height}" alt="${alt}" >`;
+  return `<img src="${sizeSrc.url}" width="${sizeSrc.width}" height="${sizeSrc.height}" alt="${alt}" loading="lazy">`;
 }
 
 

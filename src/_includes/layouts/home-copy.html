@@ -10,7 +10,7 @@
     {% image intro.image, intro.imageAlt, "(min-width: 30em) 50vw, 100vw" %}
   </div>
 </header>
-<div class="S-services lc has-bg has-ss-bg g-1-1 g-med-1">
+<div class="S-services lc has-bg g g-1-1 g-med-1">
   <div class="gi f jc-c ai-c">
     <div class="c2a encircle"><a id="work-trigger" class="button -txt -large" href="#void">see our work</a></div>
   </div>
@@ -28,7 +28,29 @@
     </ul>
     <p>Advising on and fitting both straight and 45 degree tiles and planks, we specialise in border detail, moteefe and herringbone installation on all luxury vinyl tiles.</p>
   </div>
-  <div class="gi ss-bg"></div>
+</div>
+<div id="gallery">
+  <div id="gallery-inner" class="lc">
+    <a id="closeGallery" class="button -outline" href="#void">BACK</a>
+    <h2 class="jumbo">Our work</h2>
+    <div class="image-grid">
+      {% for image in collections.gallery %}
+      <div class="cssbox" style="--trans-delay:  {{ loop.index }}">
+        <!--<a href="#image{{loop.index}}" id="image{{loop.index}}">
+            {% galleryImage image.thumbpath, "" %}
+            <span class="cssbox_full">{% galleryImage image.thumbpath, "", "full" %}</span>
+          </a>-->
+        <a class="cssbox_close" href="#void"></a>
+        {% if not loop.first %}
+        <a class="cssbox_prev" href="#image{{ loop.index - 1 }}">&laquo;</a>
+        {% endif %}
+        {% if not loop.last %}
+        <a class="cssbox_next" href="#image{{ loop.index + 1 }}">&raquo;</a>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>
 <div class="S-testimonials lc g g-1-1-1 g-sm-1 has-bg">
   {% for item in testimonials.items %}
@@ -57,7 +79,7 @@
     <p>With high moisture-resistance, luxury vinyl tiles will not warp out of shape, making them a great choice in wet areas like kitchens and bathrooms.</p>
   </div>
 </div>
-<div class="S-logos lc has-bg has-ss-bg g-1-1 g-med-1">
+<div class="S-logos lc g g-1-1 gg-none g-med-1 has-bg ">
   <div class="gi has-bg typeset">
     <p class="g gg-sm thumb-grid">
       {% image "./src/images/karndean-logo.png", "karndean logo", "" %}
@@ -67,7 +89,6 @@
     </p>
     <p>We are registered and qualified Karndean and Amtico fitters and can supply samples on a wide range of products to suit all budgets.</p>
   </div>
-  <div class="gi ss-bg"></div>
 </div>
 <div class="S-testimonials lc g g-1-1-1 g-lg-1">
   {% for item in testimonials.items %}
@@ -82,14 +103,13 @@
     {% endif %}
     {% endfor %}
 </div>
-<div class="S-contact lc has-bg has-ss-bg g-1-1 g-med-1">
+<div class="S-contact lc has-bg g g-1-1 g-med-1 gg-none ai-c">
   <div class="gi has-bg typeset">
     <h2 class="section-title">Contact us</h2>
     <p>G-Floors offer a free advice and quotation service with no pressure or obligation. Get in touch by phone or email and speak with an experienced flooring technician.</p>
     {% set c2aContent = c2a %}
     {% include "partials/c2a.html" %}
   </div>
-  <div class="gi ss-bg"></div>
 </div>
 <div class="Site-footer contact lc has-bg f f-g f-sm-1">
   <a class="brand" href="{{ site.url }}">{% include "partials/gfloors-logo-light.svg" %}</a>

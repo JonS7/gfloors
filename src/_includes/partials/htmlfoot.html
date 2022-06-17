@@ -1,6 +1,30 @@
 
 </div>
 
+<div id="gallery">
+  <div id="gallery-inner" class="lc">
+    <a id="closeGallery" class="button -outline" href="#void">BACK</a>
+    <h2 class="jumbo">Our work</h2>
+    <div class="image-grid">
+      {% for image in collections.gallery %}
+      <div class="cssbox" style="--trans-delay:  {{ loop.index }}">
+        <a href="#image{{loop.index}}" id="image{{loop.index}}">
+            {% galleryImage image.thumbpath, "" %}
+            <span class="cssbox_full">{% galleryImage image.thumbpath, "", "full" %}</span>
+          </a>
+        <a class="cssbox_close" href="#void"></a>
+        {% if not loop.first %}
+        <a class="cssbox_prev" href="#image{{ loop.index - 1 }}">&laquo;</a>
+        {% endif %}
+        {% if not loop.last %}
+        <a class="cssbox_next" href="#image{{ loop.index + 1 }}">&raquo;</a>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
 <script>
 {% include "js/main.js" %}
 </script>

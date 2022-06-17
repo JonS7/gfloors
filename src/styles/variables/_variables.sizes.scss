@@ -43,13 +43,13 @@ putting the media-query variables at the top and then consuming those variables 
   --gap: var(--ms-size_2);
   --gutter: var(--gap);
   --font_size: 100%;
-  --h1_size: var(--ms-size_9);
+  --h1_size: var(--ms-size_8);
   --h2_size: var(--ms-size_6);
   --h3_size: var(--ms-size_4);
   --h4_size: var(--ms-size_3);
   --h5_size: var(--ms-size_2);
   --h6_size: var(--ms-size_1);
-
+  --ss-bg_size: calc(var(--vh, 1vh) * 100);
 
   @media (min-width: $bp_xxs) {
     --gap: var(--s_col);

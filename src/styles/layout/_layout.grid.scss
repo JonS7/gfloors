@@ -42,8 +42,12 @@
 
 .gi {
   &.has-bg {
-    padding: max(2rem, calc(var(--s_col) / 2));
+    padding: var(--gutter);
     background: var(--color-body);
+
+     @media (min-width: $grid_mode_2) {
+      padding: calc(var(--s_col) / 2);
+    }
   }
 }
 
@@ -51,12 +55,5 @@
   grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
 }
 
-.image-grid {
-  width: 100%;
-  
-  @media (min-width: 400px) {
-    columns: auto clamp(12rem, 15vw, 400px);
-    column-gap: clamp(1rem, 1vw, 2rem);
-  }
-}
+
 

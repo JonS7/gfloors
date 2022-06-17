@@ -1,0 +1,47 @@
+.has-ss-bg {
+  display: grid;
+  align-items: end;
+  gap: 0;
+  min-height: 100vh;
+  min-height: var(--ss-bg_size);
+  overflow: hidden; // fallback so bg doesn't overflow
+  overflow: clip;
+
+  .gi:not(.ss-bg) {
+    position: relative;
+    z-index: 9;
+  }
+}
+
+.ss-bg {
+  grid-column: 1/-1;
+  z-index: 0;
+  height: 0;
+  position: sticky;
+  bottom: 0;
+  margin-bottom: calc(var(--s_row) * -1);
+  margin-left: calc(var(--gutter) * -1);
+
+  &::after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-height: var(--ss-bg_size);
+    width: 100vw;
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+
+  @supports not (overflow: clip) {
+    position: static;
+
+    &::after {
+      height: 100%;
+    }
+  }
+}

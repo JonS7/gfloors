@@ -1,3 +1,4 @@
-{% cssBackground "./src/images/abstract2.jpeg", ".S-services::before", [600, 900, 1200, 1500, 2000] %}
-{% cssBackground "./src/images/parquet2.jpeg", ".S-logos", [900, 1200, 1500, 2000] %}
-{% cssBackground "./src/images/woodkitchen.jpg", ".Site-footer", [900, 1200, 1500, 2000] %}
+{% cssBackground "./src/images/abstract2.jpeg", ".S-services .ss-bg::after", [1200, 1500, 2000] %}
+{% cssBackground "./src/images/parquet2.jpeg", ".S-logos .ss-bg::after", [1200, 1500, 2000] %}
+{% cssBackground "./src/images/woodkitchen.jpg", ".S-contact .ss-bg::after", [1200, 1500, 2000] %}
+{% cssBackground "./src/images/abstract2.jpeg", ".Site-footer", [600, 900, 1200, 1500, 2000] %}

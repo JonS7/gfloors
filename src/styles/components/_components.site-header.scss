@@ -17,6 +17,7 @@
 
     a {
       display: inline-block;
+      white-space: nowrap;
       font-weight: bold;
       --color-link: var(--color-base);
 
