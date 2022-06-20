@@ -63,11 +63,12 @@ putting the media-query variables at the top and then consuming those variables 
 
   @media (min-width: $bp_small) {
     --s_row: var(--ms-size_7);
-    --s_col: var(--ms-size_6);
+    
   }
 
   @media (min-width: $bp_med) {
     --ss-bg_size: calc(var(--vh, 1vh) * 100);
+    --s_col: var(--ms-size_6);
   } 
 
   @media (min-width: $bp_med_large) {

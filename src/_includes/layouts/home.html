@@ -12,7 +12,7 @@
 </header>
 <div class="S-services lc has-bg has-ss-bg g-1-1 g-med-1">
   <div class="gi f jc-c ai-c">
-    <div class="c2a encircle"><a id="work-trigger" class="button -txt -large" href="#void">see our work</a></div>
+    <div class="c2a encircle"><button id="work-trigger" class="button -txt -large">see our work</button></div>
   </div>
   <div class="gi typeset has-bg">
     <p>We're a small, family-run business covering Surrey, Berkshire, Hampshire and West London. Skilled and experienced, we offer quality assurance on all floor fitting services for residential and commercial premises.</p>
@@ -30,7 +30,7 @@
   </div>
   <div class="gi ss-bg"></div>
 </div>
-<div class="S-testimonials lc g g-1-1-1 g-sm-1 has-bg">
+<div class="S-testimonials lc g g-1-1-1 g-lg-1 has-bg">
   {% for item in testimonials.items %}
   {% if (loop.index <= 3) %} <blockquote class="quote typeset">
     <p>{{ item.text }}</p>

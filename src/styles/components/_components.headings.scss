@@ -2,20 +2,17 @@
 
 
 .jumbo {
-  font-size: 15vw;
+  font-size: 18vw;
+  font-size: min(18vw,6rem);
   text-transform: lowercase;
   margin-bottom: calc(var(--gap) / 2);
 
   @media (min-width: $grid-mode) {
-    font-size: 10vw
+    font-size: 7vw
   }
 
-  @media (min-width: $bp_med_large) {
-    font-size: 7.5vw
-  } 
-
   @media (min-width: $max_width) {
-    font-size: 8.5rem;
+    font-size: var(--h1_size);
   }
 }
 

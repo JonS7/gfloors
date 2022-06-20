@@ -28,8 +28,14 @@
   }
 
   .brand {
-    flex: 0 0 clamp(9rem, 15vw, 12rem);
+    flex: 0 0 calc(50vmin - 1rem);
+    //flex: 0 0 clamp(9rem, 15vw, 12rem);
+    //max-width: 12rem;
     margin: .5rem .5rem 0 .5rem;
+
+    @media (min-width: $bp-xxs) {
+      flex: 0 0 clamp(9rem, 15vw, 12rem);
+    }
 
     svg {
       width: 100%;
